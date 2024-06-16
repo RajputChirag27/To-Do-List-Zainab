@@ -59,7 +59,7 @@ export const deleteTaskById = async (req, res) => {
   try {
     const task = await Task.findByIdAndDelete(_id);
     if (!task) {
-      return res.status(404).send();
+      return res.status(404).send({message :"Data Not Found"});
     }
     res.send(task);
   } catch (e) {

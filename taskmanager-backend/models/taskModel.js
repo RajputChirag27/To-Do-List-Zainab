@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 
 const taskSchema = new mongoose.Schema({
-    title: String,
-    description: String,
-    status: String,
+    title: {type: String, required:true},
+    description: {type :String, required: true},
+    status: {type: String, enum: ['Pending', 'Completed'], required : true},
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }
   });
