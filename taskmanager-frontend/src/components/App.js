@@ -11,8 +11,8 @@ const App = () => {
   const handleRefresh = () => setRefresh(!refresh);
 
   return (
-    <div className="container">
-      <h1>Task Manager</h1>
+    <div className="container bg-black">
+      <h1 className='text-white'>Task Manager</h1>
       <AddTask onAdd={handleRefresh} />
       <TaskList refresh={refresh} onRefresh={handleRefresh} />
     </div>

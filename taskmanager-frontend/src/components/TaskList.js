@@ -32,20 +32,20 @@ const TaskList = ({ refresh, onRefresh }) => {
   };
   console.log(tasks, "tasks");
   return (
-    <div>
-      <h2 className="text-emphasis-dark text-center">Tasks List</h2>
+    <div className="p-3 me-4">
+      <h2 className="text-light text-center">Tasks List</h2>
       <ul>
         {tasks.map((task) => (
           <li
             key={task._id}
             className={`${
-              task.status == "Completed" ? "bg-success" : "bg-warning"
+              task.status === "Completed" ? "bg-success" : "bg-warning"
             }`}
           >
-            <div class="card my-3">
+            <div class="card my-3 me-3">
               <div class="card-body d-flex flex-column p-3">
                 <h5 class="card-title">Title: {task.title}</h5>
-                <p class="card-text">{task.description}</p>
+                <p class="card-text">Description: {task.description}</p>
               </div>
             </div>
             <div>

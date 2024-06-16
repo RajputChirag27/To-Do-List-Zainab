@@ -21,23 +21,30 @@ const AddTask = ({ onAdd }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='bg-black'>
       <input
         type="text"
+        className='bg-black text-white'
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+        minLength={1}
+        maxLength={50}
         placeholder="Title"
         required
       />
       <input
         type="text"
+        className='bg-black text-white'
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         placeholder="Description"
+        minLength={1}
+        maxLength={100}
         required
       />
       <select
         value={status}
+        className='bg-black text-white'
         onChange={(e) => setStatus(e.target.value)}
       >
         <option value="Pending">Pending</option>
