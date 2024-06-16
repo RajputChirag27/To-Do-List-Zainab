@@ -6,9 +6,9 @@ export const createTask = async (req, res) => {
   const task = new Task(req.body);
   try {
     await task.save();
-    res.status(201).send(task);
+    res.status(201).send({task, success: true});
   } catch (e) {
-    res.status(400).send(e);
+    res.status(400).send({e,success: false});
   }
 };
 
@@ -16,9 +16,9 @@ export const createTask = async (req, res) => {
 export const getAllTasks = async (req, res) => {
   try {
     const tasks = await Task.find();
-    res.send(tasks);
+    res.send({tasks, success: true});
   } catch (e) {
-    res.status(500).send(e);
+    res.status(500).send({e,success: false});
   }
 };
 
@@ -30,9 +30,9 @@ export const getTaskById = async (req, res) => {
     if (!task) {
       return res.status(404).send({message :"Data Not Found"});
     }
-    res.send(task);
+    res.send({task,success: true});
   } catch (e) {
-    res.status(500).send(e);
+    res.status(500).send({e,success: false});
   }
 };
 
@@ -47,9 +47,9 @@ export const updateTaskById = async (req, res) => {
     if (!task) {
       return res.status(404).send({message :"Data Not Found"});
     }
-    res.send(task);
+    res.send({task, message : "Deleted Successfully", success: true});
   } catch (e) {
-    res.status(400).send(e);
+    res.status(400).send({e,success: false});
   }
 };
 
@@ -63,6 +63,6 @@ export const deleteTaskById = async (req, res) => {
     }
     res.send(task);
   } catch (e) {
-    res.status(500).send(e);
+    res.status(500).send({e,success: false});
   }
 };
