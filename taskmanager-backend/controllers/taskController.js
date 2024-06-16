@@ -28,7 +28,7 @@ export const getTaskById = async (req, res) => {
   try {
     const task = await Task.findById(_id);
     if (!task) {
-      return res.status(404).send();
+      return res.status(404).send({message :"Data Not Found"});
     }
     res.send(task);
   } catch (e) {
@@ -45,7 +45,7 @@ export const updateTaskById = async (req, res) => {
       runValidators: true
     });
     if (!task) {
-      return res.status(404).send();
+      return res.status(404).send({message :"Data Not Found"});
     }
     res.send(task);
   } catch (e) {
