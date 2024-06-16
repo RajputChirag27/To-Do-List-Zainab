@@ -122,8 +122,7 @@ The API documentation is done using Swagger. You can access the Swagger document
 Swagger JSON Configuration
 The swagger.json file defines the structure of the API and can be found in the backend directory. Here is an example of the configuration:
 
-json
-Copy code
+``` json []
 {
   "openapi": "3.0.0",
   "info": {
@@ -261,6 +260,8 @@ Copy code
     }
   }
 }
+```
+
 Testing
 API testing is done using Postman. You can import the provided Postman collection to test the API endpoints.
 
@@ -280,8 +281,3 @@ Copy code
 └── frontend
     ├── package.json
     └── src
-Additional Reference
-For further reference, you can watch the tutorial video here.
-
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
