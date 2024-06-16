@@ -271,9 +271,7 @@ Frontend: React
 Backend: Node.js, Express
 Database: MongoDB
 Project Structure
-plaintext
-Copy code
-.
+```.
 ├── backend
 │   ├── .env.example
 │   ├── package.json
@@ -282,3 +280,4 @@ Copy code
 └── frontend
     ├── package.json
     └── src
+```
