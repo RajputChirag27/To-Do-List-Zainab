@@ -122,7 +122,7 @@ The API documentation is done using Swagger. You can access the Swagger document
 Swagger JSON Configuration
 The swagger.json file defines the structure of the API and can be found in the backend directory. Here is an example of the configuration:
 
-``` json
+```
 {
   "openapi": "3.0.0",
   "info": {
